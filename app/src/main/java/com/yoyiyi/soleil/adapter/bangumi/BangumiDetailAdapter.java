@@ -96,14 +96,6 @@ public class BangumiDetailAdapter extends BaseMultiItemQuickAdapter<MulBangumiDe
                 recyclerSeason.setLayoutManager(layoutManagerSeason);
                 recyclerSeason.setAdapter(new BangumiDetailSeasonAdapter(mulBangumiDetail.seasonsBeanList, mulBangumiDetail.seasonsTitle));
                 break;
-            case MulBangumiDetail.TYPE_EPISODE_ITEM://选集
-                RecyclerView recyclerEpisode = holder.getView(R.id.recycler);
-                recyclerEpisode.setHasFixedSize(true);
-            //    recyclerEpisode.setNestedScrollingEnabled(false);
-                LinearLayoutManager layoutManagerEpisode = new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false);
-                recyclerEpisode.setLayoutManager(layoutManagerEpisode);
-                recyclerEpisode.setAdapter(new BangumiDetailEpisodeAdapter(mulBangumiDetail.episodesBeans));
-                break;
             case MulBangumiDetail.TYPE_EPISODE_HEAD://选集头部
                 holder.setText(R.id.tv_title, "选集");
                 if (TextUtils.equals(mulBangumiDetail.isFinish, "1")) {

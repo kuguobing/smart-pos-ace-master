@@ -9,7 +9,6 @@ import com.yoyiyi.soleil.module.home.ChaseBangumiFragment;
 import com.yoyiyi.soleil.module.home.DiscoverFragment;
 import com.yoyiyi.soleil.module.home.DynamicFragment;
 import com.yoyiyi.soleil.module.home.LiveFragment;
-import com.yoyiyi.soleil.module.home.RecommendFragment;
 import com.yoyiyi.soleil.module.home.RegionFragment;
 import com.yoyiyi.soleil.utils.AppUtils;
 
@@ -41,10 +40,6 @@ public class MainAdapter extends FragmentPagerAdapter {
                 case 0:
                     //直播
                     mFragment[position] = LiveFragment.newInstance();
-                    break;
-                case 1:
-                    //推荐
-                    mFragment[position] = RecommendFragment.newInstance();
                     break;
                 case 2:
                     //追番

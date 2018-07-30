@@ -3,7 +3,6 @@ package com.yoyiyi.soleil.module.discover;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.yoyiyi.soleil.R;
-import com.yoyiyi.soleil.adapter.discover.section.GameCenterBookGiftSection;
 import com.yoyiyi.soleil.adapter.discover.section.GameCenterGameListSection;
 import com.yoyiyi.soleil.adapter.discover.section.GameCenterUserSection;
 import com.yoyiyi.soleil.base.BaseRefreshActivity;
