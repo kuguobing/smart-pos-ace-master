@@ -1,16 +1,14 @@
 package com.yoyiyi.soleil.module.discover;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
 import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.yoyiyi.soleil.R;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -21,8 +19,7 @@ import butterknife.Unbinder;
  */
 public class HomeFragment extends RxFragment {
 
-    @BindView(R.id.iv_empty)
-    ImageView mIvEmpty;
+
     Unbinder unbinder;
 
     @Nullable
@@ -37,13 +34,13 @@ public class HomeFragment extends RxFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mIvEmpty.setOnClickListener(v -> {
+       /* mIvEmpty.setOnClickListener(v -> {
             Activity activity = getActivity();
             if (activity instanceof InterestActivity) {
                 InterestActivity interestActivity = (InterestActivity) activity;
                 interestActivity.mViewPager.setCurrentItem(1);
             }
-        });
+        });*/
     }
 
     @Override

@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
 import com.yoyiyi.soleil.BiliSoleilApplication;
-import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.di.component.DaggerFragmentComponent;
 import com.yoyiyi.soleil.di.component.FragmentComponent;
 import com.yoyiyi.soleil.di.module.FragmentModule;
@@ -74,7 +73,7 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
         initInject();
         initPresenter();
         initVariables();
-        mError = ButterKnife.findById(mRootView, R.id.cl_error);
+        //mError = ButterKnife.findById(mRootView, R.id.cl_error);
         initWidget();
         finishCreateView(savedInstanceState);
         initDatas();

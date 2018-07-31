@@ -5,14 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.request.RequestOptions;
-import com.jakewharton.rxbinding2.view.RxView;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.yoyiyi.soleil.BiliSoleilApplication;
 import com.yoyiyi.soleil.R;
@@ -24,14 +17,11 @@ import com.yoyiyi.soleil.module.home.MainActivity;
 import com.yoyiyi.soleil.mvp.contract.app.SplashContract;
 import com.yoyiyi.soleil.mvp.presenter.app.SplashPresenter;
 import com.yoyiyi.soleil.utils.PrefsUtils;
-import com.yoyiyi.soleil.widget.statusbar.StatusBarUtil;
 
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -66,12 +56,7 @@ import butterknife.ButterKnife;
 public class SplashActivity extends RxAppCompatActivity implements SplashContract.View {
     @Inject
     SplashPresenter mPresenter;
-    @BindView(R.id.iv_splash)
-    ImageView mIvSplash;
-    @BindView(R.id.tv_count_down)
-    TextView mTvCountDown;
-    @BindView(R.id.ll_count_down)
-    LinearLayout mLlCountDown;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -83,7 +68,7 @@ public class SplashActivity extends RxAppCompatActivity implements SplashContrac
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
         //设置透明
-        StatusBarUtil.setTransparent(this);
+        //StatusBarUtil.setTransparent(this);
         ButterKnife.bind(this);
         initInject();
         initWidget();
@@ -103,10 +88,10 @@ public class SplashActivity extends RxAppCompatActivity implements SplashContrac
     }
 
     private void initWidget() {
-        RxView.clicks(mLlCountDown)
+       /* RxView.clicks(mLlCountDown)
                 .throttleFirst(3, TimeUnit.SECONDS)//3秒内响应第一次发射数据
                 .compose(bindToLifecycle())
-                .subscribe(object -> redirect());
+                .subscribe(object -> redirect());*/
     }
 
     /**
@@ -124,7 +109,7 @@ public class SplashActivity extends RxAppCompatActivity implements SplashContrac
     @Override
     public void showError(String msg) {
         //设置默认图片
-        mIvSplash.setImageResource(R.mipmap.ic_default_bg);
+       // mIvSplash.setImageResource(R.mipmap.ic_default_bg);
     }
 
 
@@ -137,26 +122,17 @@ public class SplashActivity extends RxAppCompatActivity implements SplashContrac
     public void showSplash(Splash splash) {
         if (!splash.data.isEmpty()) {
             int pos = new Random().nextInt(splash.data.size());
-            Glide.with(this)
-                    .load(splash.data.get(pos).thumb)
-                    //.load("http://i0.hdslb.com/bfs/archive/ba17d4df28fb0c28c8f596082d7328b4415ee28b.png")
-                    .apply(new RequestOptions()
-                            .centerCrop()
-                            .diskCacheStrategy(DiskCacheStrategy.ALL)
-                            .dontAnimate()
-                    )
-                    .into(mIvSplash);
         } else {
-            mIvSplash.setImageResource(R.mipmap.ic_default_bg);
+          //  mIvSplash.setImageResource(R.mipmap.ic_default_bg);
         }
     }
 
     @Override
     public void showCountDown(int count) {
-        mTvCountDown.setText(count + "");
+       /* mTvCountDown.setText(count + "");
         if (count == 0) {
             redirect();
-        }
+        }*/
     }
 
     /**

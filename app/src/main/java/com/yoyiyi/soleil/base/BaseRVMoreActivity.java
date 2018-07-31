@@ -3,7 +3,6 @@ package com.yoyiyi.soleil.base;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.yoyiyi.soleil.utils.AppUtils;
 import com.yoyiyi.soleil.utils.NetworkUtils;
-import com.yoyiyi.soleil.widget.CustomLoadMoreView;
 
 
 /**
@@ -25,7 +24,7 @@ public abstract class BaseRVMoreActivity<T extends BaseContract.BasePresenter, K
     @Override
     protected void initRecyclerView() {
         super.initRecyclerView();
-        mAdapter.setLoadMoreView(new CustomLoadMoreView());
+        //mAdapter.setLoadMoreView(new CustomLoadMoreView());
 
 
     }

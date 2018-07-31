@@ -1,6 +1,5 @@
 package com.yoyiyi.soleil.base;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -11,14 +10,11 @@ import android.view.View;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.yoyiyi.soleil.BiliSoleilApplication;
-import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.di.component.ActivityComponent;
 import com.yoyiyi.soleil.di.component.DaggerActivityComponent;
 import com.yoyiyi.soleil.di.module.ActivityModule;
 import com.yoyiyi.soleil.event.Event;
 import com.yoyiyi.soleil.rx.RxBus;
-import com.yoyiyi.soleil.utils.AppUtils;
-import com.yoyiyi.soleil.widget.statusbar.StatusBarUtil;
 
 import javax.inject.Inject;
 
@@ -48,8 +44,8 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         mContext = this;
         ButterKnife.bind(this);
         // mDrawerLayout = ButterKnife.findById(this, R.id.drawer_layout);
-        mToolbar = ButterKnife.findById(this, R.id.toolbar);
-        mError = ButterKnife.findById(this, R.id.cl_error);
+        // mToolbar = ButterKnife.findById(this, R.id.toolbar);
+        // mError = ButterKnife.findById(this, R.id.cl_error);
         initStatusBar();
         initInject();
         initPresenter();
@@ -117,7 +113,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         /*if (mDrawerLayout != null) {
             StatusBarUtil.setColorNoTranslucentForDrawerLayout((Activity) mContext, mDrawerLayout, AppUtils.getColor(R.color.colorPrimary));
         } else {*/
-        StatusBarUtil.setColorNoTranslucent((Activity) mContext, AppUtils.getColor(R.color.colorPrimary));
+        //StatusBarUtil.setColorNoTranslucent((Activity) mContext, AppUtils.getColor(R.color.colorPrimary));
         // }
     }
 
@@ -125,7 +121,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
     protected void onSaveInstanceState(Bundle outState) {
         //如果用以下这种做法则不保存状态，再次进来的话会显示默认tab
         //总是执行这句代码来调用父类去保存视图层的状态
-        //super.onSaveInstanceState(outState);
+        super.onSaveInstanceState(outState);
     }
 
     /**
@@ -169,7 +165,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
      * 初始化Toolbar
      */
     protected void initToolbar() {
-        if (mBack) mToolbar.setNavigationIcon(R.drawable.ic_clip_back_white);
+        //if (mBack) mToolbar.setNavigationIcon(R.drawable.ic_clip_back_white);
     }
 
     /**

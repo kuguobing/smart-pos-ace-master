@@ -23,10 +23,9 @@
     <application
         android:name=".BiliSoleilApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/BaseAppTheme">
+        >
         <!-- 主界面 -->
         <activity
             android:name=".module.home.MainActivity"
@@ -49,86 +48,28 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".module.search.TotalSearchActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".module.region.live.LiveRegionActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".module.region.RegionTypeActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 全区排行 -->
         <!-- 全站排行 -->
         <!-- 话题中心 -->
         <!-- 活动中心 -->
         <!-- 游戏中心 -->
-        <activity
-            android:name=".module.discover.GameCenterActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 全部游戏 -->
-        <activity
-            android:name=".module.discover.AllGameActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 番剧时间表 -->
-        <activity
-            android:name=".module.bangumi.BangumiScheduleActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 番剧索引 -->
-        <activity
-            android:name=".module.bangumi.BangumiIndexActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 广告界面 -->
-        <activity
-            android:name=".module.region.AdActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 浏览器界面 -->
 
         <service android:name=".widget.NetworkService"/>
         <!-- vip -->
         <!-- vip -->
-        <activity
-            android:name=".module.discover.InterestActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 番剧详情 -->
-        <activity
-            android:name=".module.bangumi.BangumiDetailActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
 
         <!-- 视频详情 -->
 
         <!-- up主详情 -->
-        <activity
-            android:name=".module.app.up.UpDetailActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
 
-        <!-- 搜索 -->
-        <activity
-            android:name=".module.search.SearchActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 离线缓存 -->
-        <activity
-            android:name=".module.entrance.OfflineDownloadActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"/>
         <!-- 视频播放 -->
-        <activity
-            android:name=".module.app.video.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/BaseAppTheme">
-        </activity>
 
         <!--网络服务-->
         <service android:name=".widget.NetworkService"/>

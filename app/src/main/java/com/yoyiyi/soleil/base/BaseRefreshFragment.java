@@ -4,14 +4,11 @@ import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 
-import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.utils.AppUtils;
 import com.yoyiyi.soleil.utils.ToastUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 /**
  * @author zzq  作者 E-mail:   soleilyoyiyi@gmail.com
@@ -28,7 +25,7 @@ public abstract class BaseRefreshFragment<T extends BaseContract.BasePresenter, 
     @Override
     protected void initRefreshLayout() {
         if (mRefresh != null) {
-            mRefresh.setColorSchemeResources(R.color.colorPrimary);
+            //mRefresh.setColorSchemeResources(R.color.colorPrimary);
             mRecycler.post(() -> {
                 mRefresh.setRefreshing(true);
                 lazyLoadData();
@@ -53,8 +50,8 @@ public abstract class BaseRefreshFragment<T extends BaseContract.BasePresenter, 
 
     @Override
     public void finishCreateView(Bundle state) {
-        mRefresh = ButterKnife.findById(mRootView, R.id.refresh);
-        mRecycler = ButterKnife.findById(mRootView, R.id.recycler);
+        //mRefresh = ButterKnife.findById(mRootView, R.id.refresh);
+        //mRecycler = ButterKnife.findById(mRootView, R.id.recycler);
         isPrepared = true;
         lazyLoad();
     }

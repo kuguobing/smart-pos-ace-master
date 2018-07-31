@@ -4,12 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.yoyiyi.soleil.R;
-import com.yoyiyi.soleil.module.home.ChaseBangumiFragment;
-import com.yoyiyi.soleil.module.home.DiscoverFragment;
-import com.yoyiyi.soleil.module.home.RegionFragment;
-import com.yoyiyi.soleil.utils.AppUtils;
-
 /**
  * @author zzq  作者 E-mail:   soleilyoyiyi@gmail.com
  * @date 创建时间：2017/5/23 18:25
@@ -27,7 +21,7 @@ public class MainAdapter extends FragmentPagerAdapter {
 
 
     private void init() {
-        mTitle = AppUtils.getStringArray(R.array.main_title);
+        //mTitle = AppUtils.getStringArray(R.array.main_title);
         mFragment = new Fragment[mTitle.length];
     }
 
@@ -35,18 +29,6 @@ public class MainAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (mFragment[position] == null) {
             switch (position) {
-                case 2:
-                    //追番
-                    mFragment[position] = ChaseBangumiFragment.newInstance();
-                    break;
-                case 3:
-                    //分区
-                    mFragment[position] = RegionFragment.newInstance();
-                    break;
-                case 5:
-                    //发现
-                    mFragment[position] = DiscoverFragment.newInstance();
-                    break;
                 default:
                     break;
             }

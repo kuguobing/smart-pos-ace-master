@@ -4,20 +4,6 @@ import android.app.Activity;
 
 import com.yoyiyi.soleil.di.module.FragmentModule;
 import com.yoyiyi.soleil.di.scope.FragmentScope;
-import com.yoyiyi.soleil.module.app.up.FavouriteFragment;
-import com.yoyiyi.soleil.module.app.up.SubmitedVideoFragment;
-import com.yoyiyi.soleil.module.app.video.CommentFragment;
-import com.yoyiyi.soleil.module.app.video.SummaryFragment;
-import com.yoyiyi.soleil.module.discover.InterestFragment;
-import com.yoyiyi.soleil.module.home.ChaseBangumiFragment;
-import com.yoyiyi.soleil.module.home.DiscoverFragment;
-import com.yoyiyi.soleil.module.home.RegionFragment;
-import com.yoyiyi.soleil.module.region.RegionTypeFragment;
-import com.yoyiyi.soleil.module.region.RegionTypeRecommendFragment;
-import com.yoyiyi.soleil.module.search.ArchiveFragment;
-import com.yoyiyi.soleil.module.search.MovieFragment;
-import com.yoyiyi.soleil.module.search.SeasonFragment;
-import com.yoyiyi.soleil.module.search.UpFragment;
 
 import dagger.Component;
 
@@ -32,35 +18,7 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
-    void inject(RegionFragment regionFragment);
-
-    void inject(ChaseBangumiFragment chaseBangumiFragment);
-
-    void inject(DiscoverFragment discoverFragment);
-
-    void inject(ArchiveFragment archiveFragment);
-
-    void inject(RegionTypeRecommendFragment regionTypeRecommendFragment);
-
-    void inject(RegionTypeFragment regionTypeFragment);
-
-    void inject(InterestFragment interestFragment);
-
-    void inject(SummaryFragment summaryFragment);
-
-    void inject(CommentFragment commentFragment);
-
-    void inject(com.yoyiyi.soleil.module.app.up.ArchiveFragment archiveFragment);
-
-    void inject(SubmitedVideoFragment submitedVideoFragment);
-
-    void inject(FavouriteFragment favouriteFragment);
-
-    void inject(MovieFragment movieFragment);
-
-    void inject(UpFragment upFragment);
-
-    void inject(SeasonFragment seasonFragment);
+    //void inject(RegionTypeFragment regionTypeFragment);
 
 
 }

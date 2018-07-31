@@ -40,10 +40,6 @@ dependencies {
     implementation deps.cardviewV7
     implementation deps.constraintLayout
 
-    //stream
-    implementation deps.stream
-    //流布局
-    //compile 'com.zhy:flowlayout-lib:1.0.3'
     //rxjava2
     implementation deps.rxjava
     implementation deps.rxAndroid
@@ -55,28 +51,16 @@ dependencies {
     //dagger2
     implementation deps.dagger
     annotationProcessor deps.daggerCompiler
-    //glide
-    implementation deps.glide
-    annotationProcessor deps.glidecompiler
-    implementation deps.glideTransformations
     //rxbinding
     implementation deps.rxBinding
     //rxlifecycle
     implementation deps.rxLifecycle
     implementation deps.rxLifecycleComponents
-    //Flycotablayout
-    implementation deps.flycoTabLayoutLib
-    implementation deps.tagFlowLayout
-    //轮播条
-    implementation deps.banner
-    //搜索框
-    implementation deps.materialSearchView
     //BaseRecyclerViewAdapterHelper
     implementation deps.baseRecyclerViewAdapterHelper
     //调试工具
     implementation deps.stetho
     implementation deps.stethoOkHttp3
     implementation deps.logger
-    implementation deps.jsoup
     implementation project(':applibraries')
 }

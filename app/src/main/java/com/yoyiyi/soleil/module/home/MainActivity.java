@@ -1,7 +1,7 @@
 package com.yoyiyi.soleil.module.home;
 
 
-import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.internal.NavigationMenuView;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -14,17 +14,11 @@ import android.view.MenuItem;
 import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.base.BaseActivity;
 import com.yoyiyi.soleil.event.Event;
-import com.yoyiyi.soleil.module.entrance.OfflineDownloadActivity;
 import com.yoyiyi.soleil.rx.RxBus;
-import com.yoyiyi.soleil.utils.AppUtils;
 import com.yoyiyi.soleil.utils.ToastUtils;
-import com.yoyiyi.soleil.widget.statusbar.StatusBarUtil;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  * @author zzq  作者 E-mail:   soleilyoyiyi@gmail.com
@@ -34,9 +28,6 @@ import butterknife.BindView;
 
 public class MainActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
     long exitTime = 0L;
-    @BindView(R.id.nav_view)
-    NavigationView mNavView;
-    @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
     private int mCurrentPos = -1;
     private List<Fragment> mFragments = new ArrayList<>();
@@ -48,20 +39,20 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     @Override
     protected void initWidget() {
-        disableNavigationViewScrollbars(mNavView);
-        mNavView.setNavigationItemSelectedListener(this);
+       // disableNavigationViewScrollbars(mNavView);
+       // mNavView.setNavigationItemSelectedListener(this);
         switchFragmentIndex(0);//初始化位置
     }
 
 
     private void initFragment() {
-        mFragments = Arrays.asList(HomeFragment.newInstance());
+        //mFragments = Arrays.asList(HomeFragment.newInstance());
 
     }
 
     @Override
     protected void initStatusBar() {
-        StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, mDrawerLayout, AppUtils.getColor(R.color.colorPrimary));
+       // StatusBarUtil.setColorNoTranslucentForDrawerLayout(this, mDrawerLayout, AppUtils.getColor(R.color.colorPrimary));
     }
 
     @Override
@@ -81,9 +72,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         if (mCurrentPos != -1)
             transaction.hide(mFragments.get(mCurrentPos));
-        if (!mFragments.get(pos).isAdded()) {
+       /* if (!mFragments.get(pos).isAdded()) {
             transaction.add(R.id.fl_content, mFragments.get(pos));
-        }
+        }*/
         transaction.show(mFragments.get(pos)).commit();
         mCurrentPos = pos;
 
@@ -104,6 +95,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         }
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
+
     /**
      * 双击退出App
      */
@@ -117,28 +113,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             event.exit = -1;
             RxBus.INSTANCE.post(event);
         }
-    }
-
-    /**
-     * 侧滑面板监听事件
-     *
-     * @param item
-     * @return
-     */
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        AppUtils.runOnUIDelayed(() -> {
-            int id = item.getItemId();
-            switch (id) {
-                case R.id.item_down:
-                    startActivity(new Intent(MainActivity.this, OfflineDownloadActivity.class));
-                    break;
-            }
-        }, 230);
-        mDrawerLayout.closeDrawer(GravityCompat.START);
-        return true;
     }
 
 
