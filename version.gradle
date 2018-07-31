@@ -21,16 +21,16 @@ ext {
             rxJavaVersion                        : '2.1.17',
             rxAndroidVersion                     : '2.0.2',
             rxpermissionsVersion                 : '0.9.5',
-            rxLifecycleVersion                   : '2.2.1',
+            rxLifecycleVersion                   : '2.2.2',
             rxbindingVersion                     : '2.1.1',
-            okhttpVersion                        : '3.10.0',
+            okhttpVersion                        : '3.11.0',
             retrofitVersion                      : '2.4.0',
             baseRecyclerViewAdapterHelperVersion : '2.9.34',
             multidexVersion                      : '1.0.1',
             streamVersion                        : '1.2.0',
             loggerVersion                        : '2.2.0',
             stethoVersion                        : '1.5.0',
-            leakcanaryAndroidVersion             : '1.5'
+            leakcanaryAndroidVersion             : '1.6.1'
     ]
 
     deps = [
