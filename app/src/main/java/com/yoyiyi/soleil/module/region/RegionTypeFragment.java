@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.yoyiyi.soleil.R;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionTypeNewSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionTypeRecommendSection;
 import com.yoyiyi.soleil.base.BaseRefreshFragment;
 import com.yoyiyi.soleil.bean.region.RegionType;
 import com.yoyiyi.soleil.constant.Constants;
@@ -83,8 +81,6 @@ public class RegionTypeFragment extends BaseRefreshFragment<RegionTypePresenter,
 
     @Override
     protected void finishTask() {
-        mSectionedAdapter.addSection(new RegionTypeRecommendSection(mList));
-        mSectionedAdapter.addSection(new RegionTypeNewSection(mNewBeanList));
         mSectionedAdapter.notifyDataSetChanged();
     }
 }

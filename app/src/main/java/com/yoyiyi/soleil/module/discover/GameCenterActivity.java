@@ -67,7 +67,6 @@ public class GameCenterActivity extends BaseRefreshActivity<GameCenterPresenter,
     @Override
     protected void finishTask() {
         mSectionedAdapter.addSection(new GameCenterUserSection());
-        mSectionedAdapter.addSection(new GameCenterBookGiftSection(mBookGiftBeanList));
         mSectionedAdapter.addSection(new GameCenterGameListSection(true, mList));
         mSectionedAdapter.notifyDataSetChanged();
     }

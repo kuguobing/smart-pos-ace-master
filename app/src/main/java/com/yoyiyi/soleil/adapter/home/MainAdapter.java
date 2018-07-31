@@ -7,8 +7,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.module.home.ChaseBangumiFragment;
 import com.yoyiyi.soleil.module.home.DiscoverFragment;
-import com.yoyiyi.soleil.module.home.DynamicFragment;
-import com.yoyiyi.soleil.module.home.LiveFragment;
 import com.yoyiyi.soleil.module.home.RegionFragment;
 import com.yoyiyi.soleil.utils.AppUtils;
 
@@ -37,10 +35,6 @@ public class MainAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         if (mFragment[position] == null) {
             switch (position) {
-                case 0:
-                    //直播
-                    mFragment[position] = LiveFragment.newInstance();
-                    break;
                 case 2:
                     //追番
                     mFragment[position] = ChaseBangumiFragment.newInstance();
@@ -48,10 +42,6 @@ public class MainAdapter extends FragmentPagerAdapter {
                 case 3:
                     //分区
                     mFragment[position] = RegionFragment.newInstance();
-                    break;
-                case 4:
-                    //动态
-                    mFragment[position] = DynamicFragment.newInstance();
                     break;
                 case 5:
                     //发现

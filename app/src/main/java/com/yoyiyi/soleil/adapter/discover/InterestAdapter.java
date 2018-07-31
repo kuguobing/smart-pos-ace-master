@@ -43,19 +43,6 @@ public class InterestAdapter extends BaseMultiItemQuickAdapter<MulInterest, Base
     @Override
     protected void convert(BaseViewHolder holder, MulInterest mulInterest) {
         switch (mulInterest.getItemType()) {
-            case MulInterest.TYPE_BANNER:
-                Banner banner = holder.getView(R.id.banner);
-                List<InterestAd.ResultBean> adList = mulInterest.mInterestAdList.result;
-                List<String> urls = Stream.of(adList).map(bannerBean -> bannerBean.ads_image).collect(Collectors.toList());
-                banner.setIndicatorGravity(BannerConfig.RIGHT)
-                        .setImages(urls)
-                        .setImageLoader(new GlideImageLoader())
-                        .start();
-                banner.setOnBannerListener(i -> {
-                    InterestAd.ResultBean interestAd = adList.get(i);
-                    BrowerActivity.startActivity(mContext, interestAd.ads_image_link, interestAd.ads_title,interestAd.ads_image);
-                });
-                break;
             case MulInterest.TYPE_CATEGRORY:
                 RecyclerView recyclerView = holder.getView(R.id.recycler);
                 recyclerView.setHasFixedSize(false);

@@ -4,11 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 
 import com.yoyiyi.soleil.R;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendBannerSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendDynamicSection;
 import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendEntranceSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendNewSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendRecommendSection;
 import com.yoyiyi.soleil.base.BaseRefreshFragment;
 import com.yoyiyi.soleil.bean.region.RegionRecommend;
 import com.yoyiyi.soleil.constant.Constants;
@@ -106,11 +102,7 @@ public class RegionTypeRecommendFragment extends BaseRefreshFragment<RegionTypeR
 
     @Override
     protected void finishTask() {
-        mSectionedAdapter.addSection(new RegionRecommendBannerSection(mTopBeanList));
         mSectionedAdapter.addSection(new RegionRecommendEntranceSection(mTid));
-        mSectionedAdapter.addSection(new RegionRecommendRecommendSection(mRecommendBeanList));
-        mSectionedAdapter.addSection(new RegionRecommendNewSection(mList));
-        mSectionedAdapter.addSection(new RegionRecommendDynamicSection(mDynamicBeanList));
         mSectionedAdapter.notifyDataSetChanged();
     }
 

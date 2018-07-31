@@ -14,11 +14,8 @@ import android.widget.TextView;
 import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.base.BaseFragment;
 import com.yoyiyi.soleil.bean.discover.HotSearchTag;
-import com.yoyiyi.soleil.module.discover.ActivityCenterActivity;
 import com.yoyiyi.soleil.module.discover.GameCenterActivity;
 import com.yoyiyi.soleil.module.discover.InterestActivity;
-import com.yoyiyi.soleil.module.recommend.AllStationRankActivity;
-import com.yoyiyi.soleil.module.region.AllRegionRankActivity;
 import com.yoyiyi.soleil.module.search.SearchActivity;
 import com.yoyiyi.soleil.mvp.contract.home.DiscoverContract;
 import com.yoyiyi.soleil.mvp.presenter.home.DiscoverPresenter;
@@ -173,15 +170,6 @@ public class DiscoverFragment extends BaseFragment<DiscoverPresenter> implements
             R.id.rl_black_list, R.id.rl_rank_original, R.id.rl_rank_all, R.id.rl_game, R.id.rl_mall})
     void startActivity(View view) {
         switch (view.getId()) {
-            case R.id.rl_rank_original://原创排行
-                startActivity(new Intent(getApplicationContext(), AllStationRankActivity.class));
-                break;
-            case R.id.rl_rank_all://全站排行
-                AllRegionRankActivity.startActivity(getApplicationContext(), "番剧");
-                break;
-            case R.id.rl_activity_center://活动中心
-                startActivity(new Intent(getApplicationContext(), ActivityCenterActivity.class));
-                break;
             case R.id.rl_game://游戏中心
                 startActivity(new Intent(getApplicationContext(), GameCenterActivity.class));
                 break;

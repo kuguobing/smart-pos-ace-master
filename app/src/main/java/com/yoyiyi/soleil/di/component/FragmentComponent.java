@@ -11,10 +11,7 @@ import com.yoyiyi.soleil.module.app.video.SummaryFragment;
 import com.yoyiyi.soleil.module.discover.InterestFragment;
 import com.yoyiyi.soleil.module.home.ChaseBangumiFragment;
 import com.yoyiyi.soleil.module.home.DiscoverFragment;
-import com.yoyiyi.soleil.module.home.DynamicFragment;
-import com.yoyiyi.soleil.module.home.LiveFragment;
 import com.yoyiyi.soleil.module.home.RegionFragment;
-import com.yoyiyi.soleil.module.region.AllRegionRankFragment;
 import com.yoyiyi.soleil.module.region.RegionTypeFragment;
 import com.yoyiyi.soleil.module.region.RegionTypeRecommendFragment;
 import com.yoyiyi.soleil.module.search.ArchiveFragment;
@@ -35,8 +32,6 @@ public interface FragmentComponent {
 
     Activity getActivity();
 
-    void inject(LiveFragment liveFragment);
-
     void inject(RegionFragment regionFragment);
 
     void inject(ChaseBangumiFragment chaseBangumiFragment);
@@ -49,13 +44,7 @@ public interface FragmentComponent {
 
     void inject(RegionTypeFragment regionTypeFragment);
 
-    void inject(AllRegionRankFragment allRegionRankFragment);
-
-    void inject(AllStationRankFragment allStationRankFragment);
-
     void inject(InterestFragment interestFragment);
-
-    void inject(DynamicFragment dynamicFragment);
 
     void inject(SummaryFragment summaryFragment);
 

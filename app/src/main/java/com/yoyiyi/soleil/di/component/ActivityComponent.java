@@ -9,7 +9,6 @@ import com.yoyiyi.soleil.module.app.up.UpDetailActivity;
 import com.yoyiyi.soleil.module.bangumi.BangumiDetailActivity;
 import com.yoyiyi.soleil.module.bangumi.BangumiIndexActivity;
 import com.yoyiyi.soleil.module.bangumi.BangumiScheduleActivity;
-import com.yoyiyi.soleil.module.discover.ActivityCenterActivity;
 import com.yoyiyi.soleil.module.discover.AllGameActivity;
 import com.yoyiyi.soleil.module.discover.GameCenterActivity;
 import com.yoyiyi.soleil.module.region.AdActivity;
@@ -35,8 +34,6 @@ public interface ActivityComponent {
     void inject(TotalSearchActivity totalSearchActivity);
 
     void inject(RegionTypeActivity regionTypeActivity);
-
-    void inject(ActivityCenterActivity activityCenterActivity);
 
     void inject(GameCenterActivity gameCenterActivity);
 

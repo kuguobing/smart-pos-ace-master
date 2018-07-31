@@ -5,10 +5,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.yoyiyi.soleil.R;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendBannerSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendDynamicSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendNewSection;
-import com.yoyiyi.soleil.adapter.region.sectiton.RegionRecommendRecommendSection;
 import com.yoyiyi.soleil.base.BaseRefreshActivity;
 import com.yoyiyi.soleil.bean.region.RegionRecommend;
 import com.yoyiyi.soleil.mvp.contract.region.RegionTypeRecommendContract;
@@ -96,10 +92,6 @@ public class AdActivity extends BaseRefreshActivity<RegionTypeRecommendPresenter
 
     @Override
     protected void finishTask() {
-        mSectionedAdapter.addSection(new RegionRecommendBannerSection(mTopBeanList));
-        mSectionedAdapter.addSection(new RegionRecommendRecommendSection(mRecommendBeanList));
-        mSectionedAdapter.addSection(new RegionRecommendNewSection(mList));
-        mSectionedAdapter.addSection(new RegionRecommendDynamicSection(mDynamicBeanList));
         mSectionedAdapter.notifyDataSetChanged();
     }
     @Override
