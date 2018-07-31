@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.yoyiyi.soleil.BiliSoleilApplication;
+import com.evideo.smartpos.VideoSmartPosApplication;
 import com.yoyiyi.soleil.di.component.ActivityComponent;
 import com.yoyiyi.soleil.di.component.DaggerActivityComponent;
 import com.yoyiyi.soleil.di.module.ActivityModule;
@@ -50,7 +50,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
         initInject();
         initPresenter();
         initVariables();
-        BiliSoleilApplication.getInstance().addActivity(this);
+        VideoSmartPosApplication.getInstance().addActivity(this);
         if (mToolbar != null) {
             //初始化Toolbar
             initToolbar();
@@ -70,7 +70,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
 
     protected ActivityComponent getActivityComponent() {
         return DaggerActivityComponent.builder()
-                .appComponent(BiliSoleilApplication.getInstance().getAppComponent())
+                .appComponent(VideoSmartPosApplication.getInstance().getAppComponent())
                 .activityModule(getActivityModule())
                 .build();
     }
@@ -154,7 +154,7 @@ public abstract class BaseActivity<T extends BaseContract.BasePresenter> extends
     @Override
     protected void onDestroy() {
         if (mPresenter != null) mPresenter.detachView();
-        BiliSoleilApplication.getInstance().removeActivity(this);
+        VideoSmartPosApplication.getInstance().removeActivity(this);
         super.onDestroy();
         if (!mDisposable.isDisposed()) {
             mDisposable.dispose();

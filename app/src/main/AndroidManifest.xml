@@ -21,7 +21,7 @@
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
-        android:name=".BiliSoleilApplication"
+        android:name="com.evideo.smartpos.VideoSmartPosApplication"
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -44,33 +44,10 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!-- 全区排行 -->
-        <!-- 全站排行 -->
-        <!-- 话题中心 -->
-        <!-- 活动中心 -->
-        <!-- 游戏中心 -->
-        <!-- 全部游戏 -->
-        <!-- 番剧时间表 -->
-        <!-- 番剧索引 -->
-        <!-- 广告界面 -->
-        <!-- 浏览器界面 -->
-
         <service android:name=".widget.NetworkService"/>
-        <!-- vip -->
-        <!-- vip -->
-        <!-- 番剧详情 -->
-
-        <!-- 视频详情 -->
-
-        <!-- up主详情 -->
-
-        <!-- 离线缓存 -->
-        <!-- 视频播放 -->
-
         <!--网络服务-->
         <service android:name=".widget.NetworkService"/>
 

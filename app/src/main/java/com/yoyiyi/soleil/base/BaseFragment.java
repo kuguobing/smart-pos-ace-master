@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.components.support.RxFragment;
-import com.yoyiyi.soleil.BiliSoleilApplication;
+import com.evideo.smartpos.VideoSmartPosApplication;
 import com.yoyiyi.soleil.di.component.DaggerFragmentComponent;
 import com.yoyiyi.soleil.di.component.FragmentComponent;
 import com.yoyiyi.soleil.di.module.FragmentModule;
@@ -111,7 +111,7 @@ public abstract class BaseFragment<T extends BaseContract.BasePresenter> extends
 
     protected FragmentComponent getFragmentComponent() {
         return DaggerFragmentComponent.builder()
-                .appComponent(BiliSoleilApplication.getInstance().getAppComponent())
+                .appComponent(VideoSmartPosApplication.getInstance().getAppComponent())
                 .fragmentModule(getFragmentModule())
                 .build();
     }

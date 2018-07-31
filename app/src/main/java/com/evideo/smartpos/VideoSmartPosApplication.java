@@ -1,9 +1,10 @@
-package com.yoyiyi.soleil;
+package com.evideo.smartpos;
 
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.evideo.smartpos.utils.LogUtils;
 import com.facebook.stetho.Stetho;
 import com.yoyiyi.soleil.di.component.AppComponent;
 import com.yoyiyi.soleil.di.component.DaggerAppComponent;
@@ -11,43 +12,14 @@ import com.yoyiyi.soleil.di.module.ApiModule;
 import com.yoyiyi.soleil.di.module.AppModule;
 import com.yoyiyi.soleil.utils.AppUtils;
 import com.yoyiyi.soleil.utils.CrashHandler;
-import com.yoyiyi.soleil.utils.LogUtils;
 import com.yoyiyi.soleil.utils.NetworkUtils;
 import com.yoyiyi.soleil.utils.PrefsUtils;
 
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @author zzq  作者 E-mail:   soleilyoyiyi@gmail.com
- * @date 创建时间：2017/4/28 11:27
- * 描述:APP
- * #                                                   #
- * #                       _oo0oo_                     #
- * #                      o8888888o                    #
- * #                      88" . "88                    #
- * #                      (| -_- |)                    #
- * #                      0\  =  /0                    #
- * #                    ___/`---'\___                  #
- * #                  .' \\|     |# '.                 #
- * #                 / \\|||  :  |||# \                #
- * #                / _||||| -:- |||||- \              #
- * #               |   | \\\  -  #/ |   |              #
- * #               | \_|  ''\---/''  |_/ |             #
- * #               \  .-\__  '-'  ___/-. /             #
- * #             ___'. .'  /--.--\  `. .'___           #
- * #          ."" '<  `.___\_<|>_/___.' >' "".         #
- * #         | | :  `- \`.;`\ _ /`;.`/ - ` : | |       #
- * #         \  \ `_.   \_ __\ /__ _/   .-` /  /       #
- * #     =====`-.____`.___ \_____/___.-`___.-'=====    #
- * #                       `=---='                     #
- * #     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   #
- * #                                                   #
- * #               佛祖保佑         永无BUG             #
- * #                                                   #
- */
-public final class BiliSoleilApplication extends Application {
-    private static BiliSoleilApplication mContext;
+public final class VideoSmartPosApplication extends Application {
+    private static VideoSmartPosApplication mContext;
     private Set<Activity> allActivities;
     private AppComponent mAppComponent;
 
@@ -148,7 +120,7 @@ public final class BiliSoleilApplication extends Application {
      *
      * @return BiliCopyApplication
      */
-    public static BiliSoleilApplication getInstance() {
+    public static VideoSmartPosApplication getInstance() {
         return mContext;
     }
 

@@ -7,7 +7,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
-import com.yoyiyi.soleil.BiliSoleilApplication;
+import com.evideo.smartpos.VideoSmartPosApplication;
 import com.yoyiyi.soleil.R;
 import com.yoyiyi.soleil.bean.app.Splash;
 import com.yoyiyi.soleil.constant.Constants;
@@ -99,7 +99,7 @@ public class SplashActivity extends RxAppCompatActivity implements SplashContrac
      */
     private void initInject() {
         DaggerActivityComponent.builder()
-                .appComponent(BiliSoleilApplication.getInstance().getAppComponent())
+                .appComponent(VideoSmartPosApplication.getInstance().getAppComponent())
                 .activityModule(new ActivityModule(this))
                 .build()
                 .inject(this);
