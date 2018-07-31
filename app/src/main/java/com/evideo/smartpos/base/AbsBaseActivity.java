@@ -14,6 +14,7 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Consumer;
 
 public abstract class AbsBaseActivity<T extends BaseContract.IBasePresenter>
         extends RxAppCompatActivity implements BaseContract.IBaseView{
@@ -65,10 +66,15 @@ public abstract class AbsBaseActivity<T extends BaseContract.IBasePresenter>
      * 退出应用
      */
     private void initExit() {
-        mDisposable = RxBus.INSTANCE.toDefaultFlowable(Event.ExitEvent.class, exitEvent -> {
-            if (exitEvent.exit == -1) {
-                finish();
+        mDisposable = RxBus.INSTANCE.toDefaultFlowable(Event.ExitEvent.class, new Consumer<Event.ExitEvent>() {
+            @Override
+            public void accept(Event.ExitEvent exitEvent) throws Exception {
+                if (exitEvent.exit == -1) {
+                    finish();
+                }
             }
         });
     }
+
+
 }
