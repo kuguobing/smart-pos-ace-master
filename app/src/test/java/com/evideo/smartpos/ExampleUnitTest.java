@@ -1,4 +1,4 @@
-package com.yoyiyi.soleil;
+package com.evideo.smartpos;
 
 import org.junit.Test;
 
