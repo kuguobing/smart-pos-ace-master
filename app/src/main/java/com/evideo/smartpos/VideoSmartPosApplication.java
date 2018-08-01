@@ -4,23 +4,22 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.evideo.smartpos.di.component.AppComponent;
+import com.evideo.smartpos.di.component.DaggerAppComponent;
+import com.evideo.smartpos.di.module.ApiModule;
+import com.evideo.smartpos.di.module.AppModule;
+import com.evideo.smartpos.utils.AppUtils;
+import com.evideo.smartpos.utils.CrashHandler;
 import com.evideo.smartpos.utils.LogUtils;
+import com.evideo.smartpos.utils.PrefsUtils;
 import com.facebook.stetho.Stetho;
-import com.yoyiyi.soleil.di.component.AppComponent;
-import com.yoyiyi.soleil.di.component.DaggerAppComponent;
-import com.yoyiyi.soleil.di.module.ApiModule;
-import com.yoyiyi.soleil.di.module.AppModule;
-import com.yoyiyi.soleil.utils.AppUtils;
-import com.yoyiyi.soleil.utils.CrashHandler;
-import com.yoyiyi.soleil.utils.NetworkUtils;
-import com.yoyiyi.soleil.utils.PrefsUtils;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public final class VideoSmartPosApplication extends Application {
     private static VideoSmartPosApplication mContext;
-    private Set<Activity> allActivities;
+    private Set<Activity> mAllActivities;
     private AppComponent mAppComponent;
 
     @Override
@@ -43,10 +42,10 @@ public final class VideoSmartPosApplication extends Application {
      * @param act act
      */
     public void addActivity(Activity act) {
-        if (allActivities == null) {
-            allActivities = new HashSet<>();
+        if (null == mAllActivities) {
+            mAllActivities = new HashSet<>();
         }
-        allActivities.add(act);
+        mAllActivities.add(act);
     }
 
     /**
@@ -55,18 +54,19 @@ public final class VideoSmartPosApplication extends Application {
      * @param act act
      */
     public void removeActivity(Activity act) {
-        if (allActivities != null) {
-            allActivities.remove(act);
+        if (null == mAllActivities) {
+            return;
         }
+        mAllActivities.remove(act);
     }
 
     /**
      * 退出应用
      */
     public void exitApp() {
-        if (allActivities != null) {
-            synchronized (allActivities) {
-                for (Activity act : allActivities) {
+        if (null != mAllActivities) {
+            synchronized (mAllActivities) {
+                for (Activity act : mAllActivities) {
                     act.finish();
                 }
             }
@@ -112,7 +112,7 @@ public final class VideoSmartPosApplication extends Application {
      * 开启网络监听
      */
     private void initNetwork() {
-        NetworkUtils.startNetService(this);
+       // NetworkUtils.startNetService(this);
     }
 
     /**

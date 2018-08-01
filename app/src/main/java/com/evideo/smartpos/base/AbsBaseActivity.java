@@ -5,35 +5,53 @@ import android.os.Bundle;
 import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 
-import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import com.evideo.smartpos.VideoSmartPosApplication;
-import com.yoyiyi.soleil.event.Event;
-import com.yoyiyi.soleil.rx.RxBus;
+import com.evideo.smartpos.di.component.ActivityComponent;
+import com.evideo.smartpos.di.component.DaggerActivityComponent;
+import com.evideo.smartpos.di.module.ActivityModule;
+import com.evideo.smartpos.event.Event;
+import com.evideo.smartpos.rx.RxBus;
+import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 public abstract class AbsBaseActivity<T extends BaseContract.IBasePresenter>
         extends RxAppCompatActivity implements BaseContract.IBaseView{
+
     @Inject
     protected T mPresenter;
     protected Context mContext;//上下文环境
+    protected Unbinder mUnbinder;
     private Disposable mDisposable;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getActivityLayoutID());
         mContext = this;
-        ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         initInject();
         initPresenter();
         initVariables();
         VideoSmartPosApplication.getInstance().addActivity(this);
         initExit();
+    }
+
+    protected ActivityModule getActivityModule() {
+        return new ActivityModule(this);
+    }
+
+    protected ActivityComponent getActivityComponent() {
+        return DaggerActivityComponent.builder()
+                .appComponent(VideoSmartPosApplication.getInstance().getAppComponent())
+                .activityModule(getActivityModule())
+                .build();
     }
 
     protected abstract @LayoutRes int getActivityLayoutID();
@@ -76,5 +94,28 @@ public abstract class AbsBaseActivity<T extends BaseContract.IBasePresenter>
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        if (null != mUnbinder) {
+            mUnbinder.unbind();
+        }
+        if (null != mPresenter) {
+            mPresenter.detachView();
+        }
+        VideoSmartPosApplication.getInstance().removeActivity(this);
+        super.onDestroy();
+        if (!mDisposable.isDisposed()) {
+            mDisposable.dispose();
+        }
+    }
 
+    @Override
+    public void showError(String msg) {
+
+    }
+
+    @Override
+    public void complete() {
+
+    }
 }

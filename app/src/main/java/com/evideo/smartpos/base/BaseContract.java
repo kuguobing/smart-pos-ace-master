@@ -1,6 +1,6 @@
 package com.evideo.smartpos.base;
 
-public class BaseContract {
+public interface BaseContract {
 
     interface IBaseView {
         /**

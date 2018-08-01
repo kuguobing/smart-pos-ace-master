@@ -1,6 +1,6 @@
 package com.evideo.smartpos.rx;
 
-import com.evideo.smartpos.bean.HttpResponse;
+import com.evideo.smartpos.net.response.HttpResponse;
 import com.evideo.smartpos.net.exception.ApiException;
 
 import org.reactivestreams.Publisher;
