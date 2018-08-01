@@ -32,14 +32,14 @@
             android:name=".module.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             />
         <!-- 欢迎界面 -->
         <activity
             android:name=".module.SplashActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

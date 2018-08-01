@@ -4,6 +4,7 @@ import android.app.Activity;
 
 import com.evideo.smartpos.di.module.ActivityModule;
 import com.evideo.smartpos.di.scope.ActivityScope;
+import com.evideo.smartpos.module.SplashActivity;
 
 import dagger.Component;
 
@@ -13,7 +14,7 @@ public interface ActivityComponent {
 
     Activity getActivity();
 
-    //void inject(SplashActivity splashActivity);
+    void inject(SplashActivity splashActivity);
 
 
 }
