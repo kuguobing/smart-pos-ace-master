@@ -20,8 +20,8 @@ import butterknife.Unbinder;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-public abstract class AbsBaseActivity<T extends BaseContract.IBasePresenter>
-        extends RxAppCompatActivity implements BaseContract.IBaseView{
+public abstract class AbsBaseActivity<T extends BaseContract.BasePresenter>
+        extends RxAppCompatActivity implements BaseContract.BaseView{
 
     @Inject
     protected T mPresenter;

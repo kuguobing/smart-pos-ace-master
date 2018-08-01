@@ -22,8 +22,8 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 
-public abstract class AbsBaseFragment<T extends BaseContract.IBasePresenter>
-        extends RxFragment implements BaseContract.IBaseView {
+public abstract class AbsBaseFragment<T extends BaseContract.BasePresenter>
+        extends RxFragment implements BaseContract.BaseView {
 
     @Inject
     protected T mPresenter;

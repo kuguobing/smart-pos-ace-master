@@ -12,10 +12,10 @@ import retrofit2.HttpException;
 
 
 public abstract class BaseObjectSubscriber<T> extends ResourceSubscriber<HttpResponse<T>> {
-    private BaseContract.IBaseView mBaseView;
+    private BaseContract.BaseView mBaseView;
     private String mMsg;
 
-    public BaseObjectSubscriber(BaseContract.IBaseView baseView) {
+    public BaseObjectSubscriber(BaseContract.BaseView baseView) {
         this.mBaseView = baseView;
     }
 

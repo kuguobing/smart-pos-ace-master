@@ -2,7 +2,7 @@ package com.evideo.smartpos.base;
 
 public interface BaseContract {
 
-    interface IBaseView {
+    interface BaseView {
         /**
          * 请求出错
          */
@@ -15,7 +15,7 @@ public interface BaseContract {
     }
 
 
-    interface IBasePresenter<T> {
+    interface BasePresenter<T> {
         /**
          * 绑定
          * @param view

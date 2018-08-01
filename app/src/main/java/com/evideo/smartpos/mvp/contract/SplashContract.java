@@ -7,14 +7,14 @@ import com.evideo.smartpos.bean.Splash;
 
 public interface SplashContract {
 
-    interface View extends BaseContract.IBaseView {
+    interface View extends BaseContract.BaseView {
 
         void showSplash(Splash splash);
 
         void showCountDown(int count);
     }
 
-    interface Presenter<T> extends BaseContract.IBasePresenter<T> {
+    interface Presenter<T> extends BaseContract.BasePresenter<T> {
 
         void getSplashData();
 

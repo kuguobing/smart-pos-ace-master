@@ -7,8 +7,8 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
-public class RxPresenter<T extends BaseContract.IBaseView>
-        implements BaseContract.IBasePresenter<T>  {
+public class RxPresenter<T extends BaseContract.BaseView>
+        implements BaseContract.BasePresenter<T>  {
 
     protected T mView;
     private CompositeDisposable mCompositeDisposable;
