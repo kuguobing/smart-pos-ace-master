@@ -1,4 +1,4 @@
-package com.evideo.smartpos.module;
+package com.evideo.smartpos.module.activity;
 
 import android.content.Intent;
 import android.view.WindowManager;

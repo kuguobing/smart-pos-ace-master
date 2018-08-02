@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import com.evideo.smartpos.di.module.ActivityModule;
 import com.evideo.smartpos.di.scope.ActivityScope;
-import com.evideo.smartpos.module.SplashActivity;
+import com.evideo.smartpos.module.activity.SplashActivity;
 
 import dagger.Component;
 

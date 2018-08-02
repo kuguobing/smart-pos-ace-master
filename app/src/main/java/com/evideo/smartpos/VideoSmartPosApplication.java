@@ -38,26 +38,24 @@ public final class VideoSmartPosApplication extends Application {
 
     /**
      * 增加Activity
-     *
-     * @param act act
+     * @param activity
      */
-    public void addActivity(Activity act) {
+    public void addActivity(Activity activity) {
         if (null == mAllActivities) {
             mAllActivities = new HashSet<>();
         }
-        mAllActivities.add(act);
+        mAllActivities.add(activity);
     }
 
     /**
      * 移除Activity
-     *
-     * @param act act
+     * @param activity
      */
-    public void removeActivity(Activity act) {
+    public void removeActivity(Activity activity) {
         if (null == mAllActivities) {
             return;
         }
-        mAllActivities.remove(act);
+        mAllActivities.remove(activity);
     }
 
     /**

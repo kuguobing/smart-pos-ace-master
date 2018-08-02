@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp200"
+    android:layout_height="@dimen/dp99"
     android:background="@color/colorPrimary"
     android:gravity="bottom"
     android:paddingLeft="@dimen/dp16"
@@ -16,7 +16,7 @@
         android:layout_marginTop="@dimen/dp10"
         android:text="盛付通"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_14"
+        android:textSize="@dimen/text_size_18"
         />
 
 </android.support.constraint.ConstraintLayout>
