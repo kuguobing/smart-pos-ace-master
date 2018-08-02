@@ -57,7 +57,8 @@ public class ApiModule {
     @Provides
     @ApiUrl
     public Retrofit provideApiRetrofit(Retrofit.Builder builder, OkHttpClient client) {
-        return createRetrofit(builder, client, ApiConstants.API_LOCAL_HOST_URL);
+        return createRetrofit(builder, client, ApiConstants.APP_BASE_URL);
+        //return createRetrofit(builder, client, ApiConstants.API_LOCAL_HOST_URL);
         //return createRetrofit(builder, client, TYDaggerApplication.ServerBaseURl());
     }
 

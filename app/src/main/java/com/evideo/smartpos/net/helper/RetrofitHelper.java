@@ -2,7 +2,6 @@ package com.evideo.smartpos.net.helper;
 
 
 import com.evideo.smartpos.bean.GuestInfo;
-import com.evideo.smartpos.bean.Splash;
 import com.evideo.smartpos.net.api.ApiService;
 import com.evideo.smartpos.net.request.HttpRequest;
 import com.evideo.smartpos.net.response.HttpResponse;
@@ -20,9 +19,6 @@ public class RetrofitHelper {
 
 
     /*******************************ApiApi****************************************/
-    public Flowable<Splash> getTopicCenter() {
-        return mApiService.getTopicCenter();
-    }
 
     public Flowable<HttpResponse<GuestInfo>> getCustomerInfo(HttpRequest httpRequest) {
         return mApiService.getCustomerInfo(httpRequest);

@@ -40,6 +40,8 @@ public abstract class AbsBaseActivity<T extends BaseContract.BasePresenter>
         initPresenter();
         initVariables();
         VideoSmartPosApplication.getInstance().addActivity(this);
+        initWidget();
+        loadData();
         initExit();
     }
 
@@ -77,6 +79,20 @@ public abstract class AbsBaseActivity<T extends BaseContract.BasePresenter>
      * 初始化变量
      */
     protected void initVariables() {
+
+    }
+
+    /**
+     * 初始化控件
+     */
+    protected void initWidget() {
+
+    }
+
+    /**
+     * 加载数据
+     */
+    protected void loadData() {
 
     }
 

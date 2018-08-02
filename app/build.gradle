@@ -40,10 +40,12 @@ dependencies {
     implementation deps.recyclerviewV7
     implementation deps.cardviewV7
     implementation deps.constraintLayout
-
     //rxjava2
     implementation deps.rxjava
     implementation deps.rxAndroid
+    //glide
+    implementation deps.glide
+    annotationProcessor deps.glidecompiler
     //permissions
     implementation deps.rxPermission
     //butterknife
