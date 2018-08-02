@@ -11,15 +11,50 @@
             android:title="首页"/>
 
         <item
-            android:id="@+id/item_vip"
+            android:id="@+id/item_bank"
             android:checkable="false"
-            android:title="我的大会员"
+            android:title="银行卡"
             />
 
         <item
-            android:id="@+id/item_point"
+            android:id="@+id/item_wx"
             android:checkable="false"
-            android:title="会员积分"
+            android:title="微信"
+            />
+
+        <item
+            android:id="@+id/item_ali"
+            android:checkable="false"
+            android:title="支付宝"
+            />
+
+        <item
+            android:id="@+id/item_sft"
+            android:checkable="false"
+            android:title="盛付通"
+            />
+
+        <item
+            android:id="@+id/item_scanner_normal"
+            android:checkable="false"
+            android:title="扫一扫"
+            />
+        <item
+            android:id="@+id/item_scanner_bank"
+            android:checkable="false"
+            android:title="银联二维码"
+            />
+
+        <item
+            android:id="@+id/item_scanner_wx"
+            android:checkable="false"
+            android:title="扫我微信"
+            />
+
+        <item
+            android:id="@+id/item_scanner_ali"
+            android:checkable="false"
+            android:title="扫我支付宝"
             />
 
     </group>
@@ -28,12 +63,6 @@
         android:id="@+id/group_user"
         android:checkableBehavior="single"
         >
-
-        <item
-            android:id="@+id/item_view_later"
-            android:checked="false"
-            android:title="稍后再看"
-            />
 
         <item
             android:id="@+id/item_star"
@@ -45,22 +74,6 @@
             android:id="@+id/item_history"
             android:checkable="false"
             android:title="历史记录"
-            />
-
-    </group>
-    <group
-        android:checkableBehavior="single"
-        android:id="@+id/group_setting"
-        >
-
-        <item
-            android:id="@+id/item_theme"
-            android:checkable="false"
-            android:title="主题选择"/>
-
-        <item
-            android:id="@+id/item_settings"
-            android:title="设置与帮助"
             />
 
     </group>

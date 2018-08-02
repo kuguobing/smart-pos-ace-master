@@ -88,9 +88,33 @@ public class MainActivity extends AbsBaseActivity
             public void run() {
                 int id = item.getItemId();
                 switch (id) {
-                    case R.id.item_vip:
+                    case R.id.item_home:
                         //startActivity(new Intent(MainActivity.this, VipActivity.class));
-                        ToastUtils.showToast("大会员");
+                        ToastUtils.showToast("首页");
+                        break;
+                    case R.id.item_bank:
+                        ToastUtils.showToast("银行卡");
+                        break;
+                    case R.id.item_wx:
+                        ToastUtils.showToast("微信");
+                        break;
+                    case R.id.item_ali:
+                        ToastUtils.showToast("支付宝");
+                        break;
+                    case R.id.item_sft:
+                        ToastUtils.showToast("盛付通");
+                        break;
+                    case R.id.item_scanner_normal:
+                        ToastUtils.showToast("扫一扫");
+                        break;
+                    case R.id.item_scanner_bank:
+                        ToastUtils.showToast("银联二维码");
+                        break;
+                    case R.id.item_scanner_wx:
+                        ToastUtils.showToast("扫我微信");
+                        break;
+                    case R.id.item_scanner_ali:
+                        ToastUtils.showToast("扫我支付宝");
                         break;
                 }
             }
