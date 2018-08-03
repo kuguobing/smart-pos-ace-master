@@ -26,7 +26,7 @@ ext {
             okhttpVersion                        : '3.11.0',
             retrofitVersion                      : '2.4.0',
             glideVersion                         : '4.7.1',
-            baseRecyclerViewAdapterHelperVersion : '2.9.34',
+            baseRecyclerViewAdapterHelperVersion : '2.9.40',
             multidexVersion                      : '1.0.1',
             streamVersion                        : '1.2.0',
             loggerVersion                        : '2.2.0',
