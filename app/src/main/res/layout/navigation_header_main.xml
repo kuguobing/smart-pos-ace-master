@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dp99"
+    android:layout_height="@dimen/dp81"
     android:background="@color/colorPrimary"
     android:gravity="bottom"
     android:paddingLeft="@dimen/dp16"
@@ -14,9 +14,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp10"
-        android:text="盛付通"
+        android:text="DEMO[支付方式列表]"
         android:textColor="@color/white"
-        android:textSize="@dimen/text_size_18"
+        android:textSize="@dimen/text_size_20"
         />
 
 </android.support.constraint.ConstraintLayout>

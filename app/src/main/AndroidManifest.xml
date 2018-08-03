@@ -50,6 +50,12 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <!-- vip -->
+        <activity
+            android:name=".module.activity.BankActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            />
 
     </application>
 

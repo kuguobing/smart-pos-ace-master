@@ -59,6 +59,8 @@ dependencies {
     //rxlifecycle
     implementation deps.rxLifecycle
     implementation deps.rxLifecycleComponents
+    //Flycotablayout
+    implementation deps.flycoTabLayoutLib
     //BaseRecyclerViewAdapterHelper
     implementation deps.baseRecyclerViewAdapterHelper
     //调试工具

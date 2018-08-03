@@ -1,6 +1,7 @@
 package com.evideo.smartpos.module.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -47,7 +48,6 @@ public class MainActivity extends AbsBaseActivity
         super.onCreate(savedInstanceState);
     }
 
-
     @Override
     protected int getActivityLayoutID() {
         return R.layout.activity_main;
@@ -89,7 +89,7 @@ public class MainActivity extends AbsBaseActivity
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.item_home:
-                        //startActivity(new Intent(MainActivity.this, VipActivity.class));
+                        startActivity(new Intent(MainActivity.this, BankActivity.class));
                         ToastUtils.showToast("首页");
                         break;
                     case R.id.item_bank:
